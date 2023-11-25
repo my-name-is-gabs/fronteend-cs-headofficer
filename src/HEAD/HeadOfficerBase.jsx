@@ -11,11 +11,13 @@ import axios from '../api/api_connection'
 
 window.addEventListener('load', async () => {
   const refresh_token = localStorage.getItem('refresh_token')
-  try {
+  if(window.location.pathname === '/head') {
+    try {
     const res = await axios.post('/api/token/refresh/', JSON.stringify({"refresh": refresh_token}))
     localStorage.setItem('access_token', res.data)
   } catch (error) {
     alert('error in refresh token')
+  }
   }
 })
 

@@ -2,7 +2,6 @@ import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import axios from "../api/api_connection";
-import { useCallback } from "react";
 
 const AuthContext = createContext();
 
@@ -54,7 +53,8 @@ export const AuthProvider = ({ children }) => {
       axios.defaults.headers["Authorization"] =
         "JWT " + localStorage.getItem("access_token");
 
-      checkUser();
+      setLoading(false);
+      return navigate("/head");
     } catch (err) {
       setLoading(false);
       console.error(err);
@@ -67,16 +67,6 @@ export const AuthProvider = ({ children }) => {
       localStorage.removeItem("refresh_token");
     }
   };
-
-  const checkUser = useCallback(() => {
-    if (adminUser.role === "HEAD" && adminUser.isActive) {
-      setLoading(false);
-      return navigate("/head");
-    } else if (adminUser.role === "OFFICER" && adminUser.isActive) {
-      setLoading(false);
-      return navigate("/officer");
-    }
-  }, [adminUser, navigate]);
 
   const logoutAdmin = () => {
     setAdminUser(null);

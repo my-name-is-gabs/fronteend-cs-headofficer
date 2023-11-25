@@ -20,6 +20,9 @@ const Dashboard = () => {
       } catch (error) {
         alert(`Something went wrong: ${error.message}`)
         console.error(error)
+        if(error.response.status === 401) {
+          alert("Access token expired. Refresh the page")
+        }
       }
     }
     testingDataFetch()
@@ -39,6 +42,9 @@ const Dashboard = () => {
       } catch (error) {
         alert(`Something went wrong: ${error.message}`)
         console.error(error)
+        if(error.response.status === 401) {
+          alert("Access token expired. Refresh the page")
+        }
       }
     }
 

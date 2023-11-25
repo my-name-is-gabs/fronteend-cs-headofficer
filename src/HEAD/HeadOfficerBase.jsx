@@ -7,18 +7,17 @@ import Info from "./Pages/Info";
 import Profile from "./Pages/Profile";
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
-// import axios from '../api/api_connection'
+import axios from '../api/api_connection'
 
-// window.addEventListener('load', async () => {
-//   const refresh_token = JSON.parse(localStorage.getItem('refresh_token'))
-//   try {
-//     const res = await axios.post('/api/token/refresh/', JSON.parse(refresh_token))
-//     console.log('refresh ba');
-//     console.log(res);
-//   } catch (error) {
-//     console.error(error)
-//   }
-// })
+window.addEventListener('load', async () => {
+  const refresh_token = localStorage.getItem('refresh_token')
+  try {
+    const res = await axios.post('/api/token/refresh/', JSON.stringify({"refresh": refresh_token}))
+    localStorage.setItem('access_token', res.data)
+  } catch (error) {
+    alert('error in refresh token')
+  }
+})
 
 
 const HeadOfficerBase = () => {
@@ -59,6 +58,7 @@ const HeadOfficerBase = () => {
             <i className="fa-solid fa-bars"></i>
           </button>
           <div className="d-inline-flex align-items-center gap-4">
+
             <img
               src="/assets/icons/profile.png"
               width={32}

@@ -1,0 +1,22 @@
+.card--holder-1,
+.card--holder-2,
+.card--holder-3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card--holder-1 {
+  border-left: 7px solid #4e73df;
+  color: #4e73df;
+}
+
+.card--holder-2 {
+  border-left: 7px solid #149063;
+  color: #149063;
+}
+
+.card--holder-3 {
+  border-left: 7px solid #36b9cc;
+  color: #36b9cc;
+}

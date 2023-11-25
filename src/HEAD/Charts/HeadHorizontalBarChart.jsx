@@ -32,33 +32,28 @@ const options = {
     },
     title: {
       display: true,
-      text: "Top universities with most applicant",
+      text: "Scholarship Type",
     },
   },
 };
 
-const labels = [
-  "POLYTECHNIC UNIVERSITY OF THE PHILIPPINES",
-  "SAPPHIRE INTERNATIONAL AVIATION ACADEMY",
-  "NATIONAL UNIVERSITY",
-  "ICCT COLLEGES",
-  "CITY UNIVERSITY OF PASAY (PAMANTASAN NG LUNGSOD NG PASAY)",
-];
+
+// eslint-disable-next-line react/prop-types
+const HeadHorizontalBarChart = ({labels, dataDash}) => {
 
 const data = {
   labels,
   datasets: [
     {
       label: "Total Count",
-      data: [831, 543, 665, 231, 589],
+      data: [...dataDash],
       borderColor: "rgb(20, 92, 144)",
-      backgroundColor: "rgba(20, 92, 144, 0.7)",
+      backgroundColor: "rgba(20, 92, 144, 1)",
     },
   ],
 };
-
-const HeadHorizontalBarChart = () => {
   return <Bar options={options} data={data} />;
 };
+
 
 export default HeadHorizontalBarChart;

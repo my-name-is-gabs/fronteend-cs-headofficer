@@ -7,10 +7,24 @@ import Info from "./Pages/Info";
 import Profile from "./Pages/Profile";
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
+// import axios from '../api/api_connection'
+
+// window.addEventListener('load', async () => {
+//   const refresh_token = JSON.parse(localStorage.getItem('refresh_token'))
+//   try {
+//     const res = await axios.post('/api/token/refresh/', JSON.parse(refresh_token))
+//     console.log('refresh ba');
+//     console.log(res);
+//   } catch (error) {
+//     console.error(error)
+//   }
+// })
+
 
 const HeadOfficerBase = () => {
   const [pageCounter, setPageCounter] = useState(1);
   const { logoutAdmin } = useContext(AuthContext);
+  
 
   const PageNavigator = (page) => {
     switch (page) {

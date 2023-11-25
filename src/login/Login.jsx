@@ -39,7 +39,7 @@ const Login = () => {
             method="post"
           >
             <h1 className="fw-bold fs-2 mt-5 text-center">
-              Welcome to Centro Secretariat <br /> Admin Page
+              Welcome to Centro Secretariat <br /> Head Officer Page
             </h1>
             <div className="mt-5">
               <label htmlFor="username" className="form-label fw-bold">

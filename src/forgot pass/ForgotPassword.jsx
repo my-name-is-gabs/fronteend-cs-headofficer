@@ -31,7 +31,8 @@ const ForgotPassword = () => {
   return (
     <>
       {isLoading && <LoadingPage />}
-      <div className="container d-flex align-items-center justify-content-center mt-5">
+      <div className="container d-flex flex-column align-items-center justify-content-center mt-5">
+        <h1 className="fw-bold mb-4">Retrieve Password</h1>
         <div className="col-md-6">
           <div className="card">
             <div className="card-header cs-bg-primary bg-gradient fw-bold text-white">
@@ -49,6 +50,12 @@ const ForgotPassword = () => {
             </div>
             <div className="card-footer">
               <div className="d-flex justify-content-end">
+                <button
+                  className="btn btn-secondary"
+                  onClick={() => navigate("/")}
+                >
+                  Cancel
+                </button>
                 <button className="btn btn-primary" onClick={retrievePass}>
                   Continue
                 </button>

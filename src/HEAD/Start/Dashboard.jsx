@@ -1,6 +1,6 @@
 import HeadDoughnutChart from "../Charts/HeadDoughnutChart";
 import HeadHorizontalBarChart from "../Charts/HeadHorizontalBarChart";
-import HeadLineChart from "../Charts/HeadLineChart";
+// import HeadLineChart from "../Charts/HeadLineChart";
 import HeadPieChart from "../Charts/HeadPieChart";
 import axios from '../../api/api_connection'
 import { useEffect, useState } from "react";
@@ -97,10 +97,10 @@ const Dashboard = () => {
       </div>
 
       {/* Line Chart */}
-      <div className="mt-5">
+      {/* <div className="mt-5">
         <h3 className="fw-bold fs-3">Scholar Trend</h3>
         <HeadLineChart />
-      </div>
+      </div> */}
 
       {/* Doughnut & Pie Chart */}
       <div className="row mt-5">

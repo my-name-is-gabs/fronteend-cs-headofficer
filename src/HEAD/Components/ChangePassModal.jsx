@@ -30,10 +30,10 @@ const ChangePassModal = () => {
         navigate('/')
       }
     } catch (error) {
-      alert("Something went wrong");
+      alert(`Something went wrong: ${error.message}`)
         if (error.response.status === 401) {
           alert("Session has expired");
-          navigate("/login");
+          navigate("/");
         }
     }
   };

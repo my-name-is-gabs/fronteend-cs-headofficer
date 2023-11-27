@@ -21,15 +21,16 @@ const Profile = () => {
           )
         );
       } catch (error) {
-        alert("Something went wrong");
+        alert(`Something went wrong: ${error.message}`)
         if (error.response.status === 401) {
           alert("Session has expired");
-          navigate("/login");
+          navigate("/");
         }
       }
     };
     fetchData();
-  }, [navigate]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleUpdateInfo = async (e) => {
     e.preventDefault();
@@ -43,9 +44,10 @@ const Profile = () => {
         alert("Update personal info successfull");
       }
     } catch (error) {
-      alert("Something went wrong");
-      if(error.response.status === 401) {
-          alert("Access token expired. Refresh the page")
+      alert(`Something went wrong: ${error.message}`)
+        if (error.response.status === 401) {
+          alert("Session has expired");
+          navigate("/");
         }
     }
   };

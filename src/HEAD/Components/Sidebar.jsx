@@ -47,14 +47,14 @@ const Sidebar = ({ pageCounter, setPageCounter }) => {
               <i className="fa-solid fa-chart-line me-2"></i> Dashboard
             </div>
           </li>
-          <li
+          {/* <li
             className={pageCounter === 2 ? "active" : ""}
             onClick={() => setPageCounter(2)}
           >
             <div>
               <i className="fa-solid fa-hourglass-start me-2"></i> Initiate
             </div>
-          </li>
+          </li> */}
           <li
             className={pageCounter === 3 ? "active" : ""}
             onClick={() => setPageCounter(3)}

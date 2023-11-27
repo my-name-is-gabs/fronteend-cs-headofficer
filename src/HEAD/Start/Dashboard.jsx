@@ -4,11 +4,13 @@ import HeadLineChart from "../Charts/HeadLineChart";
 import HeadPieChart from "../Charts/HeadPieChart";
 import axios from '../../api/api_connection'
 import { useEffect, useState } from "react";
+import {useNavigate} from 'react-router-dom'
 
 const Dashboard = () => {
   const [dashboardData, setDashboardData] = useState({})
   const [labels, setLabels] = useState([])
   const [dataDash, setDatatDash] = useState([])
+  const navigate = useNavigate()
 
   useEffect(() => {
     const testingDataFetch = async () => {
@@ -19,13 +21,14 @@ const Dashboard = () => {
         setDatatDash(() => res.data.scholarship_type_count.map(value => value.count))
       } catch (error) {
         alert(`Something went wrong: ${error.message}`)
-        console.error(error)
-        if(error.response.status === 401) {
-          alert("Access token expired. Refresh the page")
+        if (error.response.status === 401) {
+          alert("Session has expired");
+          navigate("/login");
         }
       }
     }
     testingDataFetch()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const generateReport = async () => {
@@ -41,9 +44,9 @@ const Dashboard = () => {
           link.remove()
       } catch (error) {
         alert(`Something went wrong: ${error.message}`)
-        console.error(error)
-        if(error.response.status === 401) {
-          alert("Access token expired. Refresh the page")
+        if (error.response.status === 401) {
+          alert("Session has expired");
+          navigate("/login");
         }
       }
     }

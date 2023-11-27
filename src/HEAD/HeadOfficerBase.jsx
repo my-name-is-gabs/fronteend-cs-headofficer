@@ -7,20 +7,6 @@ import Info from "./Pages/Info";
 import Profile from "./Pages/Profile";
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
-import axios from '../api/api_connection'
-
-window.addEventListener('load', async () => {
-  const refresh_token = localStorage.getItem('refresh_token')
-  if(window.location.pathname === '/head') {
-    try {
-    const res = await axios.post('/api/token/refresh/', JSON.stringify({"refresh": refresh_token}))
-    localStorage.setItem('access_token', res.data)
-  } catch (error) {
-    alert('error in refresh token')
-  }
-  }
-})
-
 
 const HeadOfficerBase = () => {
   const [pageCounter, setPageCounter] = useState(1);

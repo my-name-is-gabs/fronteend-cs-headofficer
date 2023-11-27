@@ -25,9 +25,6 @@ const ForgotPassword = () => {
     } catch (error) {
       setLoading(false);
       alert("Something went wrong");
-      if (error.response.status === 401) {
-        alert("Access token expired. Refresh the page");
-      }
     }
   };
 

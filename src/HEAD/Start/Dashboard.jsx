@@ -56,7 +56,7 @@ const Dashboard = () => {
       <div className="row">
         <div className="col-md-6 d-block">
           <h1 className="fw-bold">Dashboard</h1>
-          <h5 className="text-secondary">Welcome back, {"[Admin name]"}</h5>
+          <h5 className="text-secondary">Welcome back</h5>
         </div>
         <div className="col-md-6 d-flex align-items-center justify-content-end">
           <button type="button" className="btn btn-primary" onClick={() => generateReport()}>

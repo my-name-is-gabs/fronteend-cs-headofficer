@@ -12,7 +12,7 @@ const Sidebar = ({ pageCounter, setPageCounter }) => {
           className="offcanvas-title text-white"
           id="headOfficerOffCanvasLabel"
         >
-          Welcome Username
+          Welcome 
         </h5>
         <button
           type="button"
